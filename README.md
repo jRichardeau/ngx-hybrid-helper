@@ -272,3 +272,15 @@ You can now create your components/services... and import them in the `app.modul
 
 Don't hesitate to copy `webpack.config.js` file in your application because you will certainly need to have your own build configuration.
 
+## Production
+
+To build your application for production use, you can add the following command in your `package.json` and run `npm run build`
+
+```json
+    "scripts": {
+        "build": "rimraf dist && node ./node_modules/webpack/bin/webpack --config webpack.config.js --env.prod --bail --display-error-details"
+     }
+```
+
+This command will build Angular dependencies in `dist` directory, but you have to create your own task to copy/bundle your `.js` or `.css` files for instance.
+
