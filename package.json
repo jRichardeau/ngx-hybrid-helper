@@ -1,0 +1,60 @@
+{
+    "name": "ngx-hybrid-helper",
+    "version": "0.0.1",
+    "description": "Help to launch an hybrid app with AngularJS and Angular",
+    "main": "public_api.ts",
+    "types": "public_api.ts",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "engines": {
+        "node": ">= 8.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jRichardeau/ngx-hybrid-helper.git"
+    },
+    "keywords": [
+        "angular",
+        "angularJS",
+        "hybrid",
+        "upgrade",
+        "ngx",
+        "webpack",
+        "UpgradeModule",
+        "downgradeComponent",
+        "downgradeInjectable"
+    ],
+    "author": "Jérémie Richardeau @jRichardeau",
+    "license": "MIT",
+    "peerDependencies": {
+        "@angular/common": "5.x",
+        "@angular/compiler": "5.x",
+        "@angular/core": "5.x",
+        "@angular/platform-browser": "5.x",
+        "@angular/platform-browser-dynamic": "5.x",
+        "@angular/upgrade": "5.x",
+        "core-js": "2.x",
+        "rxjs": "5.x",
+        "zone.js": "0.x"
+    },
+    "devDependencies": {
+        "angular2-template-loader": "^0.6.2",
+        "awesome-typescript-loader": "^3.4.1",
+        "copy-webpack-plugin": "^4.3.0",
+        "css-loader": "^0.28.7",
+        "file-loader": "^1.1.5",
+        "html-loader": "^0.5.1",
+        "html-webpack-plugin": "^2.30.1",
+        "ngtemplate-loader": "^2.0.1",
+        "script-loader": "^0.7.2",
+        "source-map-loader": "^0.2.3",
+        "style-loader": "^0.19.0",
+        "uglifyjs-webpack-plugin": "^1.1.6",
+        "url-loader": "^0.6.2",
+        "webpack": "^3.10.0",
+        "webpack-config-utils": "^2.3.0",
+        "webpack-dev-server": "~2.9.5",
+        "typescript": "~2.4.2"
+    }
+}
