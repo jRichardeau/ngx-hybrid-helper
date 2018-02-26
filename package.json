@@ -1,6 +1,6 @@
 {
     "name": "ngx-hybrid-helper",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Help to launch an hybrid app with AngularJS and Angular",
     "main": "public_api.ts",
     "types": "public_api.ts",
@@ -50,11 +50,11 @@
         "script-loader": "^0.7.2",
         "source-map-loader": "^0.2.3",
         "style-loader": "^0.19.0",
+        "typescript": "~2.4.2",
         "uglifyjs-webpack-plugin": "^1.1.6",
         "url-loader": "^0.6.2",
         "webpack": "^3.10.0",
         "webpack-config-utils": "^2.3.0",
-        "webpack-dev-server": "~2.9.5",
-        "typescript": "~2.4.2"
+        "webpack-dev-server": "~2.9.5"
     }
 }
