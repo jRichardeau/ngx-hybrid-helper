@@ -117,27 +117,27 @@ The file should contain :
  
  declare var module: NodeModule;
  ```
-### step-6 Create `WebPack` configuration file
+### step-5 Create `WebPack` configuration file
 
 At the root of the application, create a `webpack.config.js` file that should contains
 
 ```javascript
-    const path = require('path');
-    const webPackGenericConf = require("ngx-hybrid-helper/webpack/webpack.config");
+const path = require('path');
+const webPackGenericConf = require("ngx-hybrid-helper/webpack/webpack.config");
 
-    module.exports = env => {
-        const webPackConfig = webPackGenericConf({
-            env: env,
-            //Path to your app
-            app: path.resolve("./app"),
-            //Path to the build app (for production)
-            dist: path.resolve("./dist")
-        });
-        return webPackConfig;
-    };
+module.exports = env => {
+    const webPackConfig = webPackGenericConf({
+        env: env,
+        //Path to your app
+        app: path.resolve("./app"),
+        //Path to the build app (for production)
+        dist: path.resolve("./dist")
+    });
+    return webPackConfig;
+};
 ```
 
-### step-6 Create an `ngx/imports.ts` file
+### step-6 Create an `app/ngx/imports.ts` file
 
 This file will tell to TypeScript transpiler which files to import in the application.
 
@@ -157,21 +157,21 @@ import "ngx-hybrid-helper/src/hybrid-helper.bootstrap";
 ```json
 {
     "scripts": {
-        "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server --env.dev --progress --inline --port 8000"
+        "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server --env.dev --progress --inline --port 8000 --open"
     }
 }
 ```
 
 ### step-8 Create a main AngularJS module
 
-Create an AngularJS module that depends on `ngx-hybrid-helper` and on your main module
+Create an AngularJS module that depends on `ngx-hybrid-helper` and on your main module (the one which is in the `ng-app` property)
 
 ```javascript
-    angular.module("ng1-app",
-        [
-            "here-your-main-app-module",
-            "ngx-hybrid-helper"
-        ]);
+angular.module("ng1-app",
+    [
+        "HERE-YOUR-MAIN-APP-MODULE", //<- replace by your main module (from ng-app)
+        "ngx-hybrid-helper"
+    ]);
 ```
 
 ### step-9 Create a main AngularJS component
@@ -179,9 +179,9 @@ Create an AngularJS module that depends on `ngx-hybrid-helper` and on your main 
 Create an AngularJS component named `ng1AppRoot` that will be your *root node*, it should contains your main component that was in your `index.html`
 
 ```javascript
-angular.module("your-main-app-module")
+angular.module("HERE-YOUR-MAIN-APP-MODULE")  //<- replace by your main module (from ng-app)
     .component("ng1AppRoot", {
-        template: '<my-previous-main-node></my-previous-main-node>',
+        template: '<my-previous-main-node></my-previous-main-node>' //<- replace here by your main root nodes (that are in index.html)
     });
 ```
 
@@ -251,7 +251,7 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 
 ### step-3 Import bootstrap file
 
-In the `ngx/imports.ts` file, change this :
+In the `app/ngx/imports.ts` file, change this :
 
 ```typescript
 //Remove this line
