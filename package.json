@@ -1,6 +1,6 @@
 {
     "name": "ngx-hybrid-helper",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Help to launch an hybrid app with AngularJS and Angular",
     "main": "public_api.ts",
     "types": "public_api.ts",
@@ -38,7 +38,7 @@
         "rxjs": "5.x",
         "zone.js": "0.x"
     },
-    "devDependencies": {
+    "dependencies": {
         "angular2-template-loader": "^0.6.2",
         "awesome-typescript-loader": "^3.4.1",
         "copy-webpack-plugin": "^4.3.0",
